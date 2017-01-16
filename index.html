@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Alex Gold Finder Game</title>
+    <meta charset="ISO-8859-1">
+    <!--For all my files I tried to use the W3School best practice page, probably not perfect-->
+
+    <!--
+    * Board.js in MINESWEEPER GAME
+    * @copyright? 2016 - All Rights Reserved - Copyright ©️
+    * @author: Alex Gilbert
+    * @version: 1.0.0
+    * @summary: Board Object
+    -->
+
+
+      <link rel="stylesheet" href="css/style.css" media="screen">
+
+<link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+<style>
+@import 'https://fonts.googleapis.com/css?family=Montserrat';
+</style>
+
+<!--<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>-->
+<script src="js/external/jquery-1.11.3.js"></script>
+<script src="js/external/buzz.min.js"></script>
+
+
+
+  </head>
+    <body>
+
+      <div id="splashScreenDiv">
+        <div id="splashLogo"></div>
+        <p>Watch out for the mine&nbsp;!</p>
+      </div>
+
+      <div id="howToPlayDiv">
+
+        <div id="logo"></div>
+
+        <!--I will change this text later-->
+        <p>
+           In this game you need to shovel through the ground to find gold, but
+           be careful, there is mine in the field.
+        </p>
+
+        <p>To collect gold you need to click on it and hold the click for 2 seconds.
+           Each piece of gold collected
+           equal more points.
+        <p>To win you need to put a flag on each possible
+           mine.
+        </p>
+        <p>
+           The number in the square represent the number of mine surronding
+           this square. The difficulty will change the board size, the number of
+           mines, how many space you can see and the number of gold.
+        </p>
+
+        <div id="difficultyDiv">
+          <p id="difficulty">Which difficulty do you want to play:</p>
+
+          <div id="difficultyMode">
+            <span id="easyButton" data-num="1">Easy</span> -
+            <span id="intermediaireButton" data-num="2">Intermediaire</span> -
+            <span id="hardButton" data-num="3">Hard</span> -
+            <span id="expertButton" data-num="4">Expert</span>
+          </div>
+        </div>
+
+        <button id="startButton">Start the Game</button>
+
+      </div>
+
+
+      <div id="gameDiv">
+
+        <header>
+          <div id="logo"></div>
+
+
+          <div id="restartButton">Restart</div>
+          <div id="separator"></div>
+          <div id="pauseButton" class="showButton">Pause</div>
+          <div id="playButton" class="hideButton">Play</div>
+          <div id="howToPlayButton">How to play</div>
+        </header>
+
+        <div id="actualGame">
+
+            <div id="tableContainer">
+              <div id="boxOverTable">
+                <p id="timer" class="vertiAlign"> </p>
+              </div>
+
+              <table id="myTable" oncontextmenu="return false;"></table>
+
+              <div id="boxUnderTable">
+                <p id="score">Score: <span> </span></p>
+                <p id="flags">Flags Left: <span></span></p>
+
+              </div>
+            </div>
+
+
+
+
+        </div>
+      </div>
+
+      <div id="gameEnd">
+        <div id="gameLose">
+          <h1>You Lose</h1>
+
+            <button class="startButtonEnd">Start the Game</button>
+        </div>
+
+        <div id="gameWin">
+          <h1>You Win</h1>
+          <p id="finalScore">Your final score is : <span></span></p>
+          <p id="putName">Put your name for the ranking! </p>
+
+          <input type="text" id="namePlayerInput">
+
+          </input>
+          <button id="rankingSubmit" class="rankingButton">Submit</button>
+
+          <div id="rankingChart">
+          <table id="rankingTable">
+            <thead>
+              <tr>
+                <td> Player Name:</td>
+                <td> Score</td>
+              </tr>
+            </thead>
+            <tbody id="tbodyRanking">
+            </tbody>
+
+        </table>
+        <button id="clearRanking" class="rankingButton">Reset ranking</button>
+        </div>
+
+            <button class="startButtonEnd">Start the Game</button>
+        </div>
+      </div>
+
+      <footer>
+        <p>Copyright (c) - Alex Gilbert - 2016</p>
+      </footer>
+
+      <section id="scripts">
+        <script src="js/timer.js"></script>
+        <script src="js/ranking.js"></script>
+        <script src="js/square.js"></script>
+        <script src="js/board.js"></script>
+        <script src="js/game.js"></script>
+      </section>
+
+    </body>
+</html>

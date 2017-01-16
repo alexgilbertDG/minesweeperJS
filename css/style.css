@@ -1,0 +1,592 @@
+/**
+  * style.css in MINESWEEPER GAME
+  * @copyright? 2016 - All Rights Reserved - Copyright ©️
+  * @author: Alex Gilbert
+  * @version: 1.0.0
+  * @summary: StyleSheet
+*/
+
+/*Remove any margin and padding to all the object*/
+* {
+  margin: 0;
+  padding: 0;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+html {
+  /*Set the value of rem to 10px*/
+  font-size: 10px;
+  background: url(../images/background.jpg) no-repeat center center fixed;
+  background-size: cover;
+  font-family: 'Montserrat', sans-serif!important;
+}
+
+body {
+  margin: 0!important;
+}
+
+.hideButton {
+  display: none!important;
+}
+
+.pauseTableTd {
+  visibility: hidden;
+}
+
+#splashScreenDiv {
+  display: block;
+  width: 80%;
+  padding: 10rem 0 10rem 0;
+  background-color: rgba(0, 0, 0, 0.4);
+  margin: 0 auto 0 auto;
+  border: 10px solid rgba(0, 0, 0, 0.5);
+}
+
+#splashLogo {
+  height: 50rem;
+  width: 50rem;
+  background: url(../images/logo.png) no-repeat;
+  background-size: contain;
+  background-position: center center;
+  display: block;
+  margin: 0 auto;
+  animation-name: splashScreen;
+  animation-duration: 1.5s;
+}
+
+#splashScreenDiv p {
+  color:#fff;
+  font-size: 3rem;
+  width:75%;
+  margin:2rem auto;
+  font-weight: 700;
+  text-align: center;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  animation-name: splashScreenText;
+  animation-duration: 2.5s;
+}
+
+#gameDiv {
+  display: none;
+}
+
+#howToPlayDiv {
+  display: none;
+  text-align: center;
+  width: 80%;
+  padding-bottom: 5rem;
+  background-color: rgba(0, 0, 0, 0.4);
+  margin: 0 auto 2rem auto;
+  border: 10px solid rgba(0, 0, 0, 0.5);
+  border-top: none;
+}
+
+#howToPlayDiv p {
+  color:#fff;
+  opacity: 0.8;
+  font-size: 2rem;
+  width:70%;
+  line-height: 3.5rem;
+  margin:0 auto;
+  font-weight: 500;
+  text-align: center;
+}
+
+#difficultyDiv {
+  padding: 3rem;
+  margin:  5rem auto;
+  width: calc(60% + 4rem);
+  box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.8) inset!important;
+  border-radius: 3px;
+}
+
+#difficultyMode {
+  opacity: 1!important;
+  margin-top:1rem!important;
+  display: flex;
+  width: 90%;
+  margin: 0 auto;
+  align-items:center;
+  color:#fff;
+}
+
+#difficulty {
+  font-weight: 700!important;
+  opacity: 0.9!important;
+  text-transform: uppercase;
+}
+
+#difficultyMode span {
+  cursor: pointer;
+  background-color: rgba(255, 255, 255, 0.8);
+  padding: 1.2rem 0;
+  width:  calc(170%/4);
+  font-size: 1.2rem;
+  border-radius: 2px;
+  text-transform: uppercase;
+  color:#303030;
+}
+
+.difficultyChoose {
+  color: #fff!important;
+  background-color: rgba(0, 0, 0, 0.5)!important;
+  box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.8) inset!important;
+}
+
+button {
+  font-family: 'Montserrat', sans-serif!important;
+  background-color: #e0e0e0;
+  box-shadow: 0px 0px 10px #000;
+  display:inline-block;
+  color: rgb(50, 50, 50);
+  font-size:1.4rem;
+  border:0;
+  cursor: pointer;
+  text-transform: uppercase;
+  padding:2rem 2rem;
+  border-radius: 2px;
+}
+
+/*Remove the blue border after you click on the button*/
+button:focus {outline:0;}
+
+button:hover {
+  color: #fff!important;
+  background-color: rgba(0, 0, 0, 0.5)!important;
+  box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.8) inset!important;
+}
+
+.rankingButton {
+  font-size: 1rem;
+  padding:1rem 1rem;
+}
+
+.startButtonEnd{
+  margin-top:3rem;
+}
+
+header {
+  width: 80%;
+  height: 24rem;
+  background-color: rgba(0, 0, 0, 0.4);
+  margin: 0 auto 2rem auto;
+  border: 10px solid rgba(0, 0, 0, 0.5);
+  border-top: none;
+}
+
+#rankingSubmit {
+  margin-left:1rem;
+}
+
+#restartButton,
+#pauseButton,
+#playButton,
+#howToPlayButton,
+#separator {
+  font-weight: 700;
+  font-size: 2rem;
+  color: rgba(255, 255, 255, 0.7);
+  letter-spacing: 1px;
+  display: inline-block;
+}
+
+#restartButton:active,
+#pauseButton:active,
+#playButton:active,
+#howToPlayButton:active {
+  color: #fff;
+}
+
+#restartButton:hover,
+#pauseButton:hover,
+#playButton:hover,
+#howToPlayButton:hover {
+  cursor: pointer;
+}
+
+#howToPlayButton {
+  position: absolute;
+  right: 10%;
+  margin-right:1rem;
+  text-align: right;
+}
+
+#restartButton {
+  margin-left:1rem;
+}
+
+#separator {
+  height: 2rem;
+  width: 0.3rem;
+  background-color: rgba(255, 255, 255, 0.7);
+  margin:0 1rem 0 1rem;
+  transform: translateY(2px);
+}
+
+#logo {
+  height: 21rem;
+  width: 19rem;
+  background: url(../images/logo.png) no-repeat;
+  background-size: contain;
+  background-position: right 1.5rem;
+  display: block;
+  margin: 0 auto;
+}
+
+#myTable {
+  background-color: #262626;
+  width: 100%;
+  height: 100%;
+  table-layout: fixed;
+  border-spacing: 0px;
+  border: 5px solid black;
+  text-align: center;
+}
+
+.square {
+  box-shadow: 0 0 0 1px #131313 inset;
+  color: #fff;
+  text-align: center;
+  overflow: hidden;
+  cursor:pointer;
+  /*remove the user from selecting the text*/
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+#rankingTable td {
+  width: 15rem;
+  height: 2.5rem;
+  color: #fff;
+}
+
+#rankingTable  tr {
+  background-color: rgba(0, 0, 0, 0.3);
+}
+
+#rankingTable thead {
+  background-color: rgba(0, 0, 0, 0.5);
+  font-size: 1.5rem;
+}
+
+#rankingTable tbody td {
+  font-size: 1.3rem;
+}
+
+#rankingTable thead td {
+  padding: 0.5rem 0;
+  border-bottom: solid 2px #949494;
+}
+
+#tableContainer {
+  margin: 0 auto;
+}
+
+#tableContainer img {
+  margin: 0 auto;
+  vertical-align: middle;
+}
+
+#gameEnd {
+  width:80%;
+  height:80%;
+  min-height: 20rem;
+  display: none;
+  margin: 0 auto;
+  background-color: rgba(0, 0, 0, 0.4);
+  border: 10px solid rgba(0, 0, 0, 0.5);
+  text-align: center;
+  padding: 3rem;
+}
+
+#gameEnd h1 {
+  font-size:6rem;
+  color:#fff;
+}
+
+#putName, #finalScore {
+  font-size: 2.6rem;
+  font-family: 'Montserrat';
+  text-transform: uppercase;
+  font-weight: 700;
+  color:#fff;
+  padding: 2rem;
+}
+
+#rankingTable {
+  margin:3rem auto 1rem auto;
+}
+
+#putName {
+  text-transform: none;
+}
+
+#gameWin, #gameLose {
+  display: block;
+}
+
+#gameLose {
+  display: none;
+}
+
+#boxOverTable {
+  margin: 0 auto;
+  height: 4rem;
+  margin-bottom: 1rem;
+  margin-top: 10rem;
+  text-align: center;
+  background-color: rgba(0, 0, 0, 0.7);
+}
+
+#boxOverTable p {
+  color:#fff;
+  display: inline-block;
+  font-size: 3.6rem;
+  font-family: 'Montserrat';
+  text-transform: uppercase;
+  font-weight: 700;
+  transform: translateY(-2px);
+  letter-spacing: 3px;
+}
+
+#boxUnderTable {
+  margin: 0 auto;
+  display: flex;
+  height: 4rem;
+  margin-bottom: 1rem;
+  margin-top: 1rem;
+  text-align: left;
+  background-color: rgba(0, 0, 0, 0.7);
+}
+
+#boxUnderTable p {
+  flex: auto;
+  color:rgba(255, 255, 255, 0.7);
+  font-size: 2rem;
+  text-transform: uppercase;
+  font-weight: 700;
+  letter-spacing: 2px;
+  line-height: 3.8rem;
+}
+
+#score {
+  margin-left: 0.5rem;
+}
+
+#flags {
+  text-align: right;
+  margin-right: 0.5rem;
+}
+
+#flags span {
+  color:#fff;
+}
+
+#score span {
+  color: #fff;
+}
+
+footer {
+  position: fixed;
+  bottom:0;
+  width: 100%;
+  height: 3rem;
+  background-color: #fff;
+  text-align: center;
+}
+
+footer p {
+  font-weight: 700;
+  font-size: 1.2rem;
+  margin-top:0.7rem;
+}
+
+
+
+
+.pauseTable {
+  background-color: rgba(0, 0, 0, 0.6);
+  color:#fff;
+  text-align: center;
+}
+
+.pauseTable:after {
+  content: "PAUSE";
+  font-size: 3rem;
+  font-weight: 700;
+  letter-spacing: 5px;
+  position: relative;
+  bottom: 30rem;
+}
+
+.n1 {color: #0000ff;}
+.n2 {color: #00cc00;}
+.n3 {color: #ff3300;}
+.n4 {color: #000099;}
+.n5 {color: #800000;}
+.n6 {color: #009999;}
+.n7 {color: #cc0099;}
+.n8 {color: #000;}
+
+.reveal {
+  background-color: #fcfcfc;
+  cursor: default;
+}
+
+.gold {
+  background-image: url(../images/gold.jpg);
+  background-position: center;
+  background-size: 99% 99%;
+  background-repeat: no-repeat;
+  cursor: pointer;
+}
+
+.flag {
+  background-image: url(../images/flag.png);
+  background-position: center;
+  background-size: 70% 90%;
+  background-repeat: no-repeat;
+  background-color: rgba(0, 255, 0, 0.8);
+}
+
+
+.explosion {
+  border: none;
+  box-shadow: none;
+  background: none;
+  background: url(../images/flame.gif) no-repeat;
+  background-size: contain;
+  transform-origin: center;
+  transform: scale(1,1);
+  transition: transform 2s;
+  transform: scale(5,5);
+}
+
+.scorePopUp {
+  animation-name: scorePopUp;
+  animation-duration: 0.4s;
+}
+
+/*ANIMATION*/
+@keyframes splashScreen {
+  0%  {
+    display: block;
+    opacity:0;
+    transform: rotateZ(180deg);
+  }
+  50% {
+    transform: rotateZ(360deg);
+  }
+  100% {
+    display: block;
+    opacity: 1;
+    transform: rotateZ(360deg);
+  }
+}
+
+@keyframes splashScreenText {
+  0%  {
+    display: block;
+    opacity:0;
+  }
+  100% {
+    display: block;
+    opacity: 1;
+  }
+}
+
+@keyframes scorePopUp {
+  0%  {
+    transform: scale(1, 1);
+  }
+  100% {
+    transform: scale(1.3, 1.3);
+  }
+}
+/*ANIMATION END*/
+
+/*Media queries to make it more responsive*/
+
+@media screen and (min-width:1300px) {
+  html {
+    font-size: 11px;
+  }
+
+  #boxOverTable {
+    margin-top: 7rem;
+  }
+}
+
+@media screen and (max-width:700px) {
+  html {
+    font-size: 9px;
+  }
+  #howToPlayDiv p {
+    width: 75%;
+  }
+}
+
+@media screen and (max-width:550px) {
+  html {
+    font-size: 8px;
+  }
+}
+
+@media screen and (max-width:400px) {
+  html {
+    font-size: 7px;
+  }
+}
+
+@media screen and (max-width:300px) {
+  html {
+    font-size: 6px;
+  }
+}
+
+@media screen and (max-width:200px) {
+  html {
+    font-size: 5px;
+  }
+}
+
+@media screen and (min-height:1100px) {
+  html {
+    font-size: 10px;
+  }
+}
+
+@media screen and (max-height:900px) {
+  html {
+    font-size: 9px;
+  }
+}
+
+@media screen and (max-height:800px) {
+  html {
+    font-size: 8px;
+  }
+  #boxUnderTable p {
+    font-size: 1.6rem;
+  }
+}
+
+@media screen and (max-height:700px) {
+  html {
+    font-size: 7px;
+  }
+}
+
+@media screen and (max-height:600px) {
+  html {
+    font-size: 6px;
+  }
+}
+/*Media queries to make it more responsive*/
